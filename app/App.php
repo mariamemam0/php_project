@@ -18,7 +18,7 @@ function getTransactionFiles(string $dirPath):array
     return $files;
 }
 
-function getTransaction(string $filename):array
+function getTransaction(string $filename ,?callable $transactionHandler = null ):array
 {
     if(! file_exists($filename)){
         trigger_error("file".$filename."does not exist" , E_USER_ERROR);
